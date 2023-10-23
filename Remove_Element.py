@@ -30,4 +30,3 @@ for i in range(k):
 print(f'Original list: {nums}')
 print(f'value {k}')
 print(f'Sorted list {nums[:k]}')
-
