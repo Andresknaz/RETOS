@@ -16,12 +16,22 @@ def find_sums (numbers: list, target: int) -> list:
      def find_sum(start: int,target: int, combination: list):
          
         if target == 0:
-             
+            print(combination)
+            result.append(combination)
             return
      
         if target < 0 or start == len(numbers):
             return
         
+        
+        for i in range(start, len(numbers)):
+            
+            if numbers[i] == numbers[i - 1]:
+                continue
+            
+            combination.append(numbers[i])
+            find_sum(i + 1, target - numbers[i], combination)
+            combination.pop()
      numbers.sort()
      result = []
      find_sum(0, target, [])
