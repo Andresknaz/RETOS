@@ -17,7 +17,7 @@ def find_sums (numbers: list, target: int) -> list:
          
         if target == 0:
             print(combination)
-            result.append(combination)
+            result.append(combination[:])
             return
      
         if target < 0 or start == len(numbers):
@@ -26,7 +26,7 @@ def find_sums (numbers: list, target: int) -> list:
         
         for i in range(start, len(numbers)):
             
-            if numbers[i] == numbers[i - 1]:
+            if i > start and numbers[i] == numbers[i - 1]:
                 continue
             
             combination.append(numbers[i])
@@ -38,4 +38,5 @@ def find_sums (numbers: list, target: int) -> list:
      return result
  
  
-print(find_sums([1, 5, 3, 2],6))
+#print(find_sums([1, 5, 3, 2],6))
+print(find_sums([1, 1, 1, 2, 2, 1, 1, 1],6))
